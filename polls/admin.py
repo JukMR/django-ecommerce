@@ -1,5 +1,6 @@
 from django.contrib import admin
 
-from .models import Object
+from .models import Item, User
 
-admin.site.register(Object)
+admin.site.register(Item)
+admin.site.register(User)
