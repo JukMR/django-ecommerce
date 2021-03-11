@@ -5,15 +5,15 @@ There are {{item.quantity}} items left
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <form action="{% url 'polls:buy' item.id %}" method="post">
-{% csrf_token %}
-  <input type="submit" value="Buy">
+  {% csrf_token %}
+  <button type="submit"">Buy</button>
 </form>
 
 <form action="/polls" method="get">
-    <input type="submit" value="Back">
+    <button type="submit"">Back</button>
 </form>
 
 <form action="{% url 'polls:add' item.id %}" method="post">
   {% csrf_token %}
-  <input type="submit" value="Add">
+  <button type="submit">Add</button>
 </form>
