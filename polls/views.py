@@ -30,3 +30,10 @@ def buy_item(request, item_id):
             'error_message': "Product out of stock",
             })
     return HttpResponseRedirect(reverse('polls:detail', args=(item.id,)))
+
+
+def add_item(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    item.quantity += 1
+    item.save()
+    return HttpResponseRedirect(reverse('polls:detail', args=(item.id,)))

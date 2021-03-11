@@ -8,6 +8,12 @@ There are {{item.quantity}} items left
 {% csrf_token %}
   <input type="submit" value="Buy">
 </form>
+
 <form action="/polls" method="get">
-  <input type="submit" value="Back">
+    <input type="submit" value="Back">
+</form>
+
+<form action="{% url 'polls:add' item.id %}" method="post">
+  {% csrf_token %}
+  <input type="submit" value="Add">
 </form>
