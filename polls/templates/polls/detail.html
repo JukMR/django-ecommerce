@@ -1,1 +1,13 @@
-{{ item.description_text }}
+<h1>{{ item.description_text }}</h1>
+
+There are {{item.quantity}} items left
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:buy' item.id %}" method="post">
+{% csrf_token %}
+  <input type="submit" value="Buy">
+</form>
+<form action="/polls" method="get">
+  <input type="submit" value="Back">
+</form>
