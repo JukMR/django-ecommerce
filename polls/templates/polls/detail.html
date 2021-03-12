@@ -9,9 +9,7 @@ There are {{item.quantity}} items left
   <button type="submit"">Buy</button>
 </form>
 
-<form action="/polls" method="get">
-    <button type="submit"">Back</button>
-</form>
+<button onclick="location.href = '/polls'">Back</button>
 
 <form action="{% url 'polls:add' item.id %}" method="post">
   {% csrf_token %}

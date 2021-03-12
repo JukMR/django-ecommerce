@@ -4,6 +4,7 @@
         <li><a href="{% url 'polls:detail' item.id %}">{{ item.name }}</a></li>
     {% endfor %}
     </ul>
+    <button onclick="location.href = '/'">Back</button>
 {% else %}
     <p>No items are available.</p>
 {% endif %}
