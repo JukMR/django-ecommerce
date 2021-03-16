@@ -7,6 +7,7 @@ class Item(models.Model):
     quantity = models.PositiveIntegerField(default=0)
     description_text = models.CharField(max_length=300)
     pub_date = models.DateTimeField('date published')
+    icon = models.ImageField(upload_to='thumbnails', default=None)
 
     def __str__(self):
         return self.name
