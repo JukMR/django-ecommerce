@@ -32,14 +32,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts',
-    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls.apps.PollsConfig',
+    'accounts',
+    'corsheaders',
+    'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -133,3 +135,7 @@ EMAIL_HOST_USER = 'senshiramma@gmail.com'
 EMAIL_HOST_PASSWORD = SECRET_PASSWORD
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
